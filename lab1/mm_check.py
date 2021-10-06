@@ -10,7 +10,7 @@ def fac(n):
 
 # Случай M/M/n/0
 def mmn0(**kargs):
-    print("\tНахождение вероятностей того, что в системе находится заявки...")
+    print("\tНахождение вероятности того, что в системе не находится заявка...")
     p0 = (1 + sum([(kargs["alph"] ** k) / fac(k) for k in range(1, kargs["n"] + 1)])) ** (-1)
     print(f"\tВероятность того, что в системе находится заявка: {p0}")
     pk = [((kargs["alph"] ** k) / fac(k)) * p0 for k in range(1, kargs["n"] + 1)]
@@ -35,7 +35,7 @@ def mmn0(**kargs):
 
 # Случай M/M/n/inf
 def mmninf(**kargs):
-    print("\tНахождение вероятностей того, что в системе находится заявки...")
+    print("\tНахождение вероятности того, что в системе не находится заявка...")
     p0 = (1 + \
           sum([(kargs["alph"] ** k) / fac(k) for k in range(1, kargs["n"] + 1)]) + \
           (kargs["alph"] ** (kargs["n"] + 1)) / (fac(kargs["n"]) * (kargs["n"] - kargs["alph"]))
@@ -73,7 +73,7 @@ def p_n_plus_s(p0, alph, n, s):
 
 # Случай M/M/n/m
 def mmnm(**kargs):
-    print("\tНахождение вероятностей того, что в системе находится заявки...")
+    print("\tНахождение вероятности того, что в системе не находится заявка...")
     p0 = (1 + \
           sum([(kargs["alph"] ** k) / fac(k) for k in range(1, kargs["n"] + 1)]) + \
           ((kargs["alph"] ** kargs["n"]) / fac(kargs["n"])) * sum(
